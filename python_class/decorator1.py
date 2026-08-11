@@ -15,3 +15,11 @@ def execute(func):
     print("ending....")
 
 execute(greeting)
+
+print("function returning another function..")
+def creat_function():
+    def greet():
+        print("hello raman")
+    return greet
+my_funct=creat_function()#function returning another function
+my_funct()#now it is refering to greet and it is executated 
