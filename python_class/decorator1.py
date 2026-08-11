@@ -34,3 +34,10 @@ def decorate(funct):
 
 greeting=decorate(greeting)
 greeting()
+
+print("introduction of @ symbol to declorator before passing function as parameter.")
+@decorate
+def HRYD():
+    print("How Are You Doing !")
+
+HRYD()
