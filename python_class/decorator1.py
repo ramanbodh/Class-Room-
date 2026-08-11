@@ -23,3 +23,14 @@ def creat_function():
     return greet
 my_funct=creat_function()#function returning another function
 my_funct()#now it is refering to greet and it is executated 
+
+print("comdination of above ideas \n1 Receiving a function \n2 creation another function \n3 returning new function")
+def decorate(funct):
+    def wrapper():
+        print("Before..")
+        funct()#it remembers the enclosed reference variable
+        print("After..")
+    return wrapper
+
+greeting=decorate(greeting)
+greeting()
