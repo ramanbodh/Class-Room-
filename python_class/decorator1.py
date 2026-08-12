@@ -72,3 +72,22 @@ def add(a,b):
 
 result=add(3,6)
 print(result)
+
+print("simple application of decorator of timing and ,model training for ai ml")
+
+import time
+
+def timer(funct):
+    def wrapper(*args,**kwargs):
+        start=time.time()
+        result=funct(*args,**kwargs)
+        end=time.time()
+        print("time taken:",end-start)
+        return result
+    return wrapper
+@timer
+def model_training():
+    time.sleep(2)
+    return "model trained"
+
+print(model_training())
