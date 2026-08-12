@@ -1,3 +1,4 @@
+'''
 def greeting():
     print("hello")
 
@@ -36,8 +37,24 @@ greeting=decorate(greeting)
 greeting()
 
 print("introduction of @ symbol to declorator before passing function as parameter.")
-@decorate
-def HRYD():
+@decorate#saves time 
+def HRYD(): 
     print("How Are You Doing !")
 
-HRYD()
+HRYD()  
+
+'''
+print("A problem with current decorator it only works with function with no arguments \n for that we will be using *args(positional arguments)& \n**kwargs(Keyword arguments)\n the name args & kwargs is just community convention, the magic lies in asterisks(*,**)\n it allows function to  have variable number of arguments,meaning one can pass as many input as they can to the function,\*args will convert the inputs into single tuple and **kwargs will convert the key value into dictionary . ")
+
+def decorator(funct):
+    def wrapper(*args,**kwargs):
+        print("Before...")
+        funct(*args,**kwargs)
+        print("After...")
+    return wrapper
+
+@decorator
+def who(name):
+    print("hi",name)
+who("raman")
+
