@@ -56,5 +56,19 @@ def decorator(funct):
 @decorator
 def who(name):
     print("hi",name)
-who("raman")
+who("raman")       
 
+print("now let code some simple decorator using *args and **kwargs ")
+def decorator1(funct):
+    def wrapper(*args,**kwargs):
+        print("starting....")
+        result=funct(*args,**kwargs)
+        print("ending....")
+        return result
+    return wrapper
+@decorator1
+def add(a,b):
+    return a+b
+
+result=add(3,6)
+print(result)
