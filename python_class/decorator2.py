@@ -28,8 +28,7 @@ def minimum(number):
     def decorator(funct):
         def wrapper(value):#here value is passed directly without storing it in tuple and dictionary like *args,**kwargs
             if value < number:
-                print("to small value")
-                return
+                return "to small value"
             return funct(value)
         return wrapper
     return decorator
@@ -41,3 +40,13 @@ def num1(value):
 num1=minimum(5)(num1)
 result=num1(10)
 print(result)
+
+print(" now lets use @ for factory decorator")
+@minimum(4)
+def num2(value):
+    return f"the value is {value}"
+
+result=num2(100)
+print(result)
+result1=num2(3)
+print(result1)
