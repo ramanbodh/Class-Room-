@@ -1,3 +1,4 @@
+print("this is factory decorator , where we having 3 or more layers of function forming a decorator , where first layer can be pass some configuration value .")
 def repeat(times):
     def decorator(funct):
         def wrapper(*args,**kwargs):
