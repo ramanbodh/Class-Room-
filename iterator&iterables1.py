@@ -18,5 +18,27 @@ while True:
     try:
         x=next(it)
         print(x)
-    except StopIteration:
+    except StopIteration:#stop iteration tell there is no more values
         break
+
+#creating the you Own iterator for counting number to n the number
+print("---------------------------")
+class Count:
+    def __init__(self,maximum):
+        self.current=1
+        self.maximum=maximum
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.current > self.maximum:
+            raise StopIteration
+        value=self.current
+        self.current+=1
+
+        return value
+
+counter=Count(4)
+print(next(counter))
+print(next(counter))
+print(next(counter))
+print(next(counter))
